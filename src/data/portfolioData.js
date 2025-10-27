@@ -21,47 +21,51 @@ export const aboutMe = [
 export const skills = {
   cloud: {
     title: 'Cloud Platforms',
+    proficiency: 95,
     items: [
-      'Microsoft Azure',
-      'Amazon Web Services',
-      'Multi-Cloud Architecture',
-      'Azure DevOps',
-      'CI/CD Pipelines'
+      { name: 'Microsoft Azure', level: 95 },
+      { name: 'Amazon Web Services', level: 85 },
+      { name: 'Multi-Cloud Architecture', level: 90 },
+      { name: 'Azure DevOps', level: 90 },
+      { name: 'CI/CD Pipelines', level: 88 }
     ]
   },
   data: {
     title: 'Data Engineering',
+    proficiency: 92,
     items: [
-      'Azure Data Factory',
-      'Azure Synapse',
-      'Databricks',
-      'Delta Lake',
-      'PySpark',
-      'Python',
-      'SQL'
+      { name: 'Azure Data Factory', level: 95 },
+      { name: 'Azure Synapse', level: 90 },
+      { name: 'Databricks', level: 92 },
+      { name: 'Delta Lake', level: 88 },
+      { name: 'PySpark', level: 90 },
+      { name: 'Python', level: 95 },
+      { name: 'SQL', level: 95 }
     ]
   },
   ai: {
     title: 'AI & ML',
+    proficiency: 90,
     items: [
-      'Generative AI & LLMs',
-      'RAG Pipelines',
-      'Azure OpenAI',
-      'LLM Fine-Tuning',
-      'Prompt Engineering',
-      'LangChain',
-      'PyTorch & TensorFlow',
-      'Azure ML & MLOps'
+      { name: 'Generative AI & LLMs', level: 92 },
+      { name: 'RAG Pipelines', level: 95 },
+      { name: 'Azure OpenAI', level: 93 },
+      { name: 'LLM Fine-Tuning', level: 85 },
+      { name: 'Prompt Engineering', level: 90 },
+      { name: 'LangChain', level: 88 },
+      { name: 'PyTorch & TensorFlow', level: 82 },
+      { name: 'Azure ML & MLOps', level: 90 }
     ]
   },
   analytics: {
     title: 'Analytics & BI',
+    proficiency: 93,
     items: [
-      'Power BI',
-      'Microsoft Fabric',
-      'SAP Analytics Cloud',
-      'DAX & SQL',
-      'Data Modeling'
+      { name: 'Power BI', level: 95 },
+      { name: 'Microsoft Fabric', level: 88 },
+      { name: 'SAP Analytics Cloud', level: 85 },
+      { name: 'DAX & SQL', level: 93 },
+      { name: 'Data Modeling', level: 92 }
     ]
   }
 };
@@ -123,4 +127,91 @@ export const certifications = [
   'Microsoft Certified: Fabric Analytics Engineer Associate',
   'Databricks Certified: Associate Developer for Apache Spark 3.0'
 ];
+
+export const projects = [
+  {
+    title: 'Persona-Driven RAG Platform',
+    description: 'Enterprise-grade conversational AI platform serving Finance, HR, Sales, and Leadership with role-aware responses using Azure OpenAI and Cognitive Search.',
+    tech: ['Azure OpenAI', 'Cognitive Search', 'PostgreSQL', 'pgvector', 'Python', 'LangChain'],
+    category: 'AI/ML',
+    highlights: [
+      'Scaled to serve 70-100 concurrent users',
+      'Reduced response time by 60%',
+      'Implemented RAG with semantic search'
+    ]
+  },
+  {
+    title: 'ETL Modernization Framework',
+    description: 'Migrated legacy data warehouses to modern cloud platforms with AI-driven data validation and automated testing frameworks.',
+    tech: ['Azure Synapse', 'Databricks', 'Data Lake', 'PySpark', 'Azure DevOps'],
+    category: 'Data Engineering',
+    highlights: [
+      'Automated 80% of migration workflows',
+      'Reduced processing time by 70%',
+      'Zero data loss during migration'
+    ]
+  },
+  {
+    title: 'Legacy Data Migration - Medallion Architecture',
+    description: 'Migrated legacy data from SAP and other enterprise sources to cloud using Medallion Architecture (Bronze, Silver, Gold layers) for data quality and governance.',
+    tech: ['Azure Synapse', 'Databricks', 'Delta Lake', 'SAP Extractors', 'PySpark', 'Azure Data Factory'],
+    category: 'Data Engineering',
+    highlights: [
+      'Implemented 3-tier Medallion Architecture',
+      'Migrated data from SAP and legacy systems',
+      'Established data quality framework',
+      'Enabled real-time analytics on historical data'
+    ]
+  },
+  {
+    title: 'AI Application Framework',
+    description: 'Modular framework for rapid development of AI applications using Python FastAPI backend and React frontend, enabling quick deployment of AI solutions across business domains.',
+    tech: ['Python', 'FastAPI', 'React', 'Azure ML', 'Docker', 'Kubernetes', 'CI/CD'],
+    category: 'AI/ML',
+    highlights: [
+      'Reduced AI application development time by 50%',
+      'Standardized FastAPI + React architecture',
+      'Integrated monitoring & logging',
+      'Enabled quick deployment of AI solutions'
+    ]
+  }
+];
+
+// LinkedIn Recommendations
+// To update: Visit https://www.linkedin.com/in/akshay-dhabale-931bb59b/details/recommendations/
+// Copy recent recommendations and paste them here
+// Format: { name, role, company, text, avatar }
+
+export const testimonials = [
+  {
+    name: 'Vijay R',
+    role: '',
+    company: '',
+    text: 'Akshay\'s work ethic and his curiosity to learn stands out till this day. He quickly became my go to team member for all things related to Data integration. His command on technical and coupled with soft skills, helped all my complex data integration projects to a successful outcome. Suffice it to say, I enjoyed working with Akshay immensely.',
+    avatar: '👤',
+    linkedInUrl: ''
+  },
+  {
+    name: 'Rima Mukherjee',
+    role: '',
+    company: '',
+    text: 'Akshay was a consultant for our team for the automation of Power BI Reports. His work always went above and beyond our expectations. He is quite well with his Analytical Skills to solve problems. He is also a good communicator and problem solver. He is always open about the progress of the project and never hesitated to questions asked by the Business. He would be a valuable asset to any organization.',
+    avatar: '👤',
+    linkedInUrl: ''
+  },
+  {
+    name: 'View More',
+    role: 'LinkedIn Recommendations',
+    company: 'Click to see all recommendations',
+    text: 'See more recommendations and endorsements from colleagues, managers, and clients on my LinkedIn profile.',
+    avatar: '🔗',
+    linkedInUrl: 'https://www.linkedin.com/in/akshay-dhabale-931bb59b/details/recommendations/'
+  }
+];
+
+// Instructions to update testimonials:
+// 1. Go to: https://www.linkedin.com/in/akshay-dhabale-931bb59b/details/recommendations/
+// 2. Copy the recommendation text
+// 3. Add recommender's name, role, and company
+// 4. Paste into the array above following the same format
 
