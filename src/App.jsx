@@ -76,6 +76,17 @@ export default function Portfolio() {
   const scrollToSection = (section) => {
     setActiveSection(section);
     setIsMenuOpen(false);
+    const element = document.getElementById(section);
+    if (element) {
+      const offset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -178,7 +189,7 @@ export default function Portfolio() {
       </div>
 
       {/* About Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -201,7 +212,7 @@ export default function Portfolio() {
       </div>
 
       {/* Skills Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Core Competencies</h2>
           
@@ -246,7 +257,7 @@ export default function Portfolio() {
       </div>
 
       {/* Experience Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Professional Experience</h2>
           <div className="space-y-8">
@@ -279,7 +290,7 @@ export default function Portfolio() {
       </div>
 
       {/* Education Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div id="education" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -301,7 +312,7 @@ export default function Portfolio() {
       </div>
 
       {/* Certifications Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div id="certifications" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
