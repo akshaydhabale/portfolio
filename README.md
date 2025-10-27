@@ -11,6 +11,7 @@ A modern, responsive portfolio website showcasing professional experience, skill
 - **Certifications Showcase** - Display of professional certifications
 - **Mobile Navigation** - Hamburger menu for mobile devices
 - **Smooth Scrolling** - Enhanced user experience with smooth page navigation
+- **Component-Based Architecture** - Well-organized, maintainable code structure
 
 ## 🛠️ Tech Stack
 
@@ -18,6 +19,38 @@ A modern, responsive portfolio website showcasing professional experience, skill
 - **Vite** - Fast build tool and development server
 - **Tailwind CSS** - Utility-first CSS framework
 - **Lucide React** - Beautiful, consistent icons
+
+## 📁 Project Structure
+
+```
+Portfolio/
+├── public/                      # Static assets served as-is
+│   ├── profile.jpg             # Profile photo
+│   └── Akshay_Dhabale_AI_CoE.pdf  # Resume PDF
+├── src/
+│   ├── components/             # React components
+│   │   ├── Navigation.jsx      # Top navigation bar
+│   │   ├── Hero.jsx           # Hero section with profile
+│   │   ├── About.jsx          # About me section
+│   │   ├── Skills.jsx         # Skills showcase
+│   │   ├── Experience.jsx     # Work experience
+│   │   ├── Education.jsx      # Educational background
+│   │   ├── Certifications.jsx # Professional certifications
+│   │   └── Footer.jsx         # Footer with social links
+│   ├── data/
+│   │   └── portfolioData.js   # All content/data in one place
+│   ├── App.jsx                # Main app component
+│   ├── main.jsx               # Application entry point
+│   └── index.css              # Global styles and Tailwind imports
+├── files/                      # Source files (not deployed)
+│   ├── profile.jpg            # Original profile photo
+│   └── Akshay_Dhabale_AI_CoE.pdf  # Original resume
+├── index.html                 # HTML template
+├── package.json               # Dependencies and scripts
+├── vite.config.js            # Vite configuration
+├── tailwind.config.js        # Tailwind CSS configuration
+└── postcss.config.js         # PostCSS configuration
+```
 
 ## 📋 Prerequisites
 
@@ -68,33 +101,42 @@ Preview the production build locally:
 npm run preview
 ```
 
-## 📁 Project Structure
+### Deploy to GitHub Pages
 
-```
-Portfolio/
-├── public/              # Static assets
-├── src/
-│   ├── App.jsx         # Main portfolio component
-│   ├── main.jsx        # Application entry point
-│   └── index.css       # Global styles and Tailwind imports
-├── index.html          # HTML template
-├── package.json        # Dependencies and scripts
-├── vite.config.js      # Vite configuration
-├── tailwind.config.js  # Tailwind CSS configuration
-└── postcss.config.js   # PostCSS configuration
+Deploy your portfolio to GitHub Pages:
+
+```bash
+npm run deploy
 ```
 
 ## 🎨 Customization
 
 ### Update Personal Information
 
-Edit `src/App.jsx` to update:
+Edit `src/data/portfolioData.js` to update:
 
-- Personal details (name, contact info)
-- Skills and competencies
-- Work experience
-- Education
-- Certifications
+- **personalInfo** - Name, title, contact details, social links
+- **aboutMe** - Professional summary and bio
+- **skills** - Technical skills organized by category
+- **experiences** - Work history and achievements
+- **education** - Academic background
+- **certifications** - Professional certifications
+
+### Replace Profile Photo
+
+1. Add your photo to the `public/` folder
+2. Update the path in `src/data/portfolioData.js`:
+   ```javascript
+   profileImage: '/portfolio/your-photo.jpg'
+   ```
+
+### Update Resume
+
+1. Add your resume PDF to the `public/` folder
+2. Update the path in `src/data/portfolioData.js`:
+   ```javascript
+   resumePDF: '/portfolio/your-resume.pdf'
+   ```
 
 ### Modify Colors
 
@@ -104,17 +146,15 @@ The project uses Tailwind's utility classes with a purple-indigo gradient theme.
 2. Replace with your preferred Tailwind color classes
 3. Or extend the theme in `tailwind.config.js`
 
-### Add Resume Download
+## 🌐 Deployment
 
-Update the "Download Resume" button in `src/App.jsx`:
+### Deploy to GitHub Pages (Current Setup)
 
-```jsx
-<a href="/path/to/resume.pdf" download className="...">
-  Download Resume
-</a>
+```bash
+npm run deploy
 ```
 
-## 🌐 Deployment
+Your site will be live at: **https://akshaydhabale.github.io/portfolio/**
 
 ### Deploy to Vercel
 
@@ -130,35 +170,32 @@ npm run build
 # Then drag and drop the 'dist' folder to Netlify
 ```
 
-### Deploy to GitHub Pages
-
-This project is configured to deploy to: **https://akshaydhabale.github.io/portfolio/**
-
-**Method 1: Manual Deployment with gh-pages**
-
-```bash
-# Install dependencies (if not already installed)
-npm install
-
-# Deploy to GitHub Pages
-npm run deploy
-```
-
-**Method 2: Automatic Deployment (Recommended)**
-
-The project includes a GitHub Actions workflow that automatically deploys on every push to main:
-
-1. Push your code to GitHub
-2. Go to your repository settings → Pages
-3. Set Source to "GitHub Actions"
-4. The site will automatically deploy on every push!
-
 ## 📱 Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
+
+## 🏗️ Component Structure
+
+Each component is self-contained and imports data from `portfolioData.js`:
+
+- **Navigation** - Fixed header with smooth scroll navigation
+- **Hero** - Profile photo, title, contact info, and CTA buttons
+- **About** - Professional summary and introduction
+- **Skills** - Interactive skill categories with detailed lists
+- **Experience** - Timeline of professional experience
+- **Education** - Academic credentials
+- **Certifications** - Professional certifications display
+- **Footer** - Social media links and copyright
+
+## 📝 Maintenance Tips
+
+1. **Update Content**: All content lives in `src/data/portfolioData.js` - update once, reflected everywhere
+2. **Add Components**: Create new components in `src/components/` and import them in `App.jsx`
+3. **Styling**: Use Tailwind utility classes for consistency
+4. **Icons**: Import from `lucide-react` for consistency
 
 ## 📝 License
 
@@ -168,10 +205,12 @@ This project is open source and available for personal use.
 
 **Akshay Dhabale**
 - Role: Cloud Data & AI Architect
-- Location: Canada
+- Location: Toronto, Canada
+- Email: akshaydhabale@gmail.com
 - Phone: +1 (514) 560-9036
+- LinkedIn: [akshay-dhabale-931bb59b](https://www.linkedin.com/in/akshay-dhabale-931bb59b/)
+- GitHub: [akshaydhabale](https://github.com/akshaydhabale)
 
 ---
 
 Built with ❤️ using React and Tailwind CSS
-
